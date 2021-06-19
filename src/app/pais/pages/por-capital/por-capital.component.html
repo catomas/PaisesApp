@@ -1,36 +1,45 @@
 <div class="animate__animated animate__fadeIn animate_faster">
-    <h2>Por Capital </h2>
-     <hr>
-    
-    <div class="row">
-        <div class="col">
-            <app-pais-input (onEnter)="buscar( $event )" (onDebounce)="sugerencias( $event )" placeholder="Buscar capital..."></app-pais-input>
-        </div>
+  <div class="p-grid">
+    <div class="p-col-12 p-md-12">
+      <h2>Por Capital</h2>
+      <app-pais-input
+        (onEnter)="buscar($event)"
+        (onDebounce)="sugerencias($event)"
+        placeholder="Buscar país..."
+      ></app-pais-input>
     </div>
-    <ul *ngIf="mostrarSugerencias" class="list-group">
-        <li *ngFor="let pais of paisesSugeridos" class="list-group-item list-group-item-action ">
-            <a class="nav-link" [routerLink]= "['/pais', pais.alpha2Code]" >
-                {{pais.capital}}
-            </a>
-        </li>
-        <li class="list-group-item list-group-item-action " (click)="buscarSugerido(termino)">
-            <a class="nav-link"  >
-                Buscar "{{termino}}"
-            </a>
-        </li>
-    </ul>
-    <hr>
+  </div>
+  <p-card *ngIf="mostrarSugerencias" class="p-d-inline-flex">
+    <div *ngFor="let pais of paisesSugeridos">
+      <button
+        pButton
+        class="p-button-link"
+        [routerLink]="['/pais', pais.alpha2Code]"
+      >
+        {{ pais.capital }}
+      </button>
+    </div>
+    <div (click)="buscarSugerido(termino)">
+      <button pButton class="p-button-link">Buscar "{{ termino }}"</button>
+    </div>
+  </p-card>
 </div>
-
-<hr>
 
 <div *ngIf="hayError" class="alert alert-danger">
-    No se encontró nada con el termino {{termino}}
+
+
+  <p-message  severity="error"  text="No se encontró nada con el termino {{ termino }}" >
+    
+  </p-message>
 </div>
 
-<div *ngIf="paises.length > 0" class="row">
-    <div class="col">
-        <app-pais-tabla [paises]= "paises" ></app-pais-tabla>
-    </div>
-
+<hr />
+<div class="p-grid">
+  <div *ngIf="paises.length > 0">
+    <p-card>
+      <div class="p-col">
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+      </div>
+    </p-card>
+  </div>
 </div>

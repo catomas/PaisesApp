@@ -1,10 +1,17 @@
-<form (ngSubmit)="buscar()" autocomplete="off">
-  <input
-    type="text"
-    class="form-control"
-    name="termino"
-    [placeholder]= "placeholder"
-    (input)="teclaPresionada( )"
-    [(ngModel)]="termino"
-  />
-</form>
+
+
+  <form (ngSubmit)="buscar()" autocomplete="off">
+    <span class="p-float-label">
+      <input
+      type="text"
+      pInputText
+      name="termino"
+      class="p-inputtext-lg"
+      (input)="teclaPresionada()"
+      [(ngModel)]="termino"
+      />
+      <label for="float-input">{{placeholder}}</label>
+    </span>
+  </form>
+  
+

@@ -8,6 +8,9 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
+// PrimeNG
+import { PrimeNgModule } from './prime-ng/prime-ng.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     PaisModule,
     SharedModule,
+    PrimeNgModule
     
   ],
   providers: [],

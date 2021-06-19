@@ -57,3 +57,9 @@ export interface Translations {
     hr: string;
     fa: string;
 }
+
+export interface Messages {
+    severity: string;
+    summary:  string;
+    detail:   string;
+}

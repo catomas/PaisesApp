@@ -10,6 +10,10 @@ import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component';
 import { PaisInputComponent } from './components/pais-input/pais-input.component';
 
+// PrimeNG
+import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+
+
 
 
 @NgModule({
@@ -30,7 +34,8 @@ import { PaisInputComponent } from './components/pais-input/pais-input.component
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    PrimeNgModule
   ]
 })
 export class PaisModule { }

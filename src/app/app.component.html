@@ -1,9 +1,12 @@
-<div class="row container mt-4">
-    <div class="col-3">
-        <app-sidebar></app-sidebar>
-    </div>
-
-    <div class="col">
-        <router-outlet></router-outlet>
-    </div>
+<div class="p-grid">
+  <div class="p-col-3">
+    <p-card header="Busquedas de Paises: ">
+      <app-sidebar></app-sidebar>
+    </p-card>
+  </div>
+  <div class="p-col-9">
+    <p-card>
+      <router-outlet></router-outlet>
+    </p-card>
+  </div>
 </div>

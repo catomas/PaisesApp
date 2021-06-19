@@ -1,9 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-
-.small-flag {
-    width: 50px;
+html, body {
+    margin: 10px;
+    background-color: var(--surface-b);
+    font-family: var(--font-family);
+    font-size: 16px;
 }
 
-.mr-1 {
-    margin-right: 5px;
+.text-layout {
+    color: var(--text-color)
 }

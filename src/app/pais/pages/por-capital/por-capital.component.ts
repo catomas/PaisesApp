@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Country } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';
+import {MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-por-capital',
   templateUrl: './por-capital.component.html',
+  providers: [MessageService],
   styles: [
     `
       li {
@@ -17,11 +20,14 @@ export class PorCapitalComponent {
   termino: string = '';
   hayError: boolean = false;
   paises: Country[] = [];
+  pais: string = '';
 
   paisesSugeridos: Country[] = [];
   mostrarSugerencias: boolean = false;
 
-  constructor(private paisService: PaisService) {}
+  constructor(private paisService: PaisService, private router: Router) {}
+
+  
 
   buscar(termino: string) {
     this.mostrarSugerencias = false;
@@ -54,4 +60,6 @@ export class PorCapitalComponent {
   buscarSugerido(termino: string) {
     this.buscar(termino);
   }
+
+
 }
